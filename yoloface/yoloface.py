@@ -36,7 +36,6 @@ def run_yoloface(image_path,model_cfg,model_weights,output_dir):
     if not output_dir:
         output_dir = 'outputs/'
 
-    print(image,model_cfg,model_weights,output_dir,sep="\n")
 
 
     #####################################################################
@@ -131,14 +130,15 @@ def run_yoloface(image_path,model_cfg,model_weights,output_dir):
 
 
         print('DONE!')
+
         print('***********************************************************')
         file_path = os.path.join(output_dir, output_file)
-        return file_path
+        return file_path,len(faces)
 
 
     #call the main function
-    file_path = _main()
-    return file_path
+    file_path,number_of_faces = _main()
+    return file_path,number_of_faces
 
 
 # if __name__ == '__main__':
