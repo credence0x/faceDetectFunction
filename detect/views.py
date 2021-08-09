@@ -17,7 +17,12 @@ def detectView(request):
 		response_data = requests.get(url).json()
 
 		if not response_data["authenticated"]:
-			return HttpResponse(status=401) #unauthorized
+			# return HttpResponse(status=401) #unauthorized
+			res = {
+			"success":False,
+			"message":"Unauthorized"
+			}
+			return JsonResponse(res)
 		try:
 			image_file = request.FILES['image']
 		
