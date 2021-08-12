@@ -12,23 +12,35 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 
 from pathlib import Path
 import os
+import environ
+
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve(strict=True).parent.parent
 
 
+# ROOT_DIR = Path(__file__).resolve(strict=True).parent.parent
+# env = environ.Env()
+# READ_DOT_ENV_FILE = env.bool('DJANGO_READ_DOT_ENV_FILE', default=True)
+# if READ_DOT_ENV_FILE:
+#     env.read_env(str(ROOT_DIR / '.env'))
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
 
 SECRET_KEY = os.environ['SECRET_KEY'] or 'h3id(qeu1dkm4zbj*u3bh*e)l_@3i=sjyo-x&xel9am&+v2!ql'
+# SECRET_KEY = env('DJANGO_SECRET_KEY', default='alabama')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["192.168.43.173","127.0.0.1",
-                "localhost","lanredjangofacedetect.herokuapp.com"]
+ALLOWED_HOSTS = ["192.168.43.173",
+                    "127.0.0.1",
+                    '18.189.102.209',
+                    'qolom.com',
+                    "localhost"]
 
 CORS_ORIGIN_ALLOW_ALL = False
 
@@ -138,6 +150,3 @@ STATIC_URL = '/static/'
 MEDIA_ROOT  = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
 
-import dj_database_url 
-prod_db  =  dj_database_url.config(conn_max_age=500)
-DATABASES['default'].update(prod_db)

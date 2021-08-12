@@ -13,7 +13,9 @@ def detectView(request):
 	if request.method =="POST":
 		user_id = request.POST['user_id']
 		token = request.POST['token']
-		url = 'http://localhost:3001/apis/token/verify/{}/{}'.format(user_id,token)
+		url = 'http://nodefacedetect.herokuapp.com/apis/token/verify/{}/{}'.format(user_id,token)
+		# url = 'http://127.0.0.1:3001/apis/token/verify/{}/{}'.format(user_id,token)
+
 		response_data = requests.get(url).json()
 
 		if not response_data["authenticated"]:
@@ -25,8 +27,8 @@ def detectView(request):
 			return JsonResponse(res)
 		try:
 			image_file = request.FILES['image']
+			print(type(image_file),request.FILES)
 		
-
 			old_image = Old_image.objects.create(image=image_file)
 		    
 			old_absolute_file_path = os.path.join(MEDIA_ROOT, old_image.image.name)
