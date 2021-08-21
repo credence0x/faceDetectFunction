@@ -1,2 +1,4 @@
 # face_detector/settings.py
 media/*
+.env
+.serverless.yaml
