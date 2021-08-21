@@ -3,8 +3,8 @@ Hey there :wave: :grinning:. <br><br>
 This is the second of two parts of a loosely coupled application.
 
 It is a face detection application and consists of;<br>
-      <br>a) an interface that the user communicates with 
-      <br>b) a machine learning function that interpretes the images sent by the interface. (<a href="https://github.com/ojetokun/face-detect-interface">this part</a>)
+      <br>a) an interface that the user communicates with (<a href="https://github.com/ojetokun/face-detect-interface"> which can be found here </a>)
+      <br>b) a machine learning function that interpretes the images sent by the interface. ( this part )
 <br><br>
  
 This is the function that has all the logic for the face detection aspect. It receives api calls then uses the weights of the pre-trained model to detect faces sent to it by the interface side.<br>
