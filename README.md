@@ -17,6 +17,7 @@ The function is written in python django and the other side is written in javasc
 <br>The reason for writing the machine learning functions in python is that python has more support and is easier to use for data science.
 <br> I have also been using python for data science for a long while so that seemed to be a better option.
 <br><br>
-Note: The project has been completed but has been removed from production due to cost of management  but a picture of it working can be found at https://twitter.com/ojetokunlanre/status/1424799067461210141/photo/1
+Note: The project has been completed but has been removed from production due to cost of management  but a picture of it working can be found below
 <br><br>
+![Faces Detected Image](faces_detected.jpg?raw=true "Face Detect")
 
